@@ -1,0 +1,45 @@
+// Player inputs
+string playerClass, playerRace;
+int playerLevel, conScore;
+List playerFeat;
+bool average;
+
+// Game info
+Dict classes = {gameClass(string), hitDie(int)}
+Arry int[,] = [[1,-5]... [30,10]]
+Dict feats = {{Tough, 2} {Stout, 1}}
+private HP int;
+
+void CheckVariables
+{
+	Convert.ToInt32(playerLevel);
+	Convert.ToInt32(conScore);
+
+	if (!classes.ContainsKey(playerClass))
+	{
+		Debug.Log("Gave invalid class, your class is Fighter");
+		playerClass = "Fighter";
+	}
+
+	if (playerLevel > 20)
+	{
+		Debug.Log("Level cannot be greater than 20 you cheater.");
+		playerLevel = 20;
+	}
+	else if (player < 1)
+	{
+		Debug.Log("Level cannot be lower than 1.")
+		playerLevel = 1;
+	}
+
+	if (conScore > 30)
+	{
+		Debug.Log("conScore too high");	
+		conScore = 30;
+	}
+	else if (conScore < 1)
+	{
+		Debug.Log("conScore too low");
+		conScore = 1;
+	}
+}
