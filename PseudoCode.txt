@@ -2,15 +2,22 @@
 string playerClass, playerRace;
 int playerLevel, conScore;
 List playerFeat;
-bool average;
+bool isAverage;
 
 // Game info
 Dict classes = {gameClass(string), hitDie(int)}
-Arry int[,] = [[1,-5]... [30,10]]
 Dict feats = {{Tough, 2} {Stout, 1}}
-private HP int;
+private hp int;
 
-void CheckVariables
+void Start()
+{
+	CheckVariables();
+	CalculateHealth();
+	PrintOutput();
+}
+
+
+void CheckVariables()
 {
 	Convert.ToInt32(playerLevel);
 	Convert.ToInt32(conScore);
@@ -42,4 +49,61 @@ void CheckVariables
 		Debug.Log("conScore too low");
 		conScore = 1;
 	}
+}
+
+void CalculateHealth()
+{
+	if (isAverage)
+	{
+		int totalNumber;
+		for (int i = 1, i <= classes[playerClass], i++)
+		{
+			totalNumber += i;
+		}
+		int average = Convert.Int32(totalNumber/classes[playerClass]);
+		hp += average * playerLevel;
+	}
+	else
+	{
+		int totalNumber;
+		for (int i = 0, i < playerLevel, i++)
+		{
+			totalNumber += Random.Range(1, classes[playerClass] + 1)
+		}
+		hp += totalNumber
+	}
+	switch (conScore)
+	{
+		case 1:
+			hp += -5 * playerLevel;
+			break;
+		case 2:
+		case 3:
+			hp += -4 * playerLevel;
+			break;
+		...
+		case 30:
+			hp += 10 * playerLevel;
+	}
+	if (playerFeat.Contains("Tough"))
+	{
+		hp += 2 * playerLevel
+	}
+	if (playerFeat.Contains("Stout"))
+	{
+		hp += playerLevel	
+	}
+	if (playerRace == "Dwarf")
+	{
+		hp += playerLevel * 2
+	}
+	else if (playerRace == "Orc" || playerRace == "Goliath")
+	{
+		hp += playerLevel
+	}
+}
+
+void PrintOutput()
+{
+	Debug.Log(Player info + hp)
 }
