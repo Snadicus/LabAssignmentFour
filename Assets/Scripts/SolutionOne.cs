@@ -26,77 +26,109 @@ public class SolutionOne : MonoBehaviour
     public bool isAverage;
 
     // Arrays
-    private string[] raceArray = {"Aasimar", "Dragonborn", "Dwarf", "Elf", "Gnome", "Goliath", "Halfling", "Human", "Orc", "Tiefling"};
+    private string[] raceArray = {"aasimar", "dragonborn", "dwarf", "elf", "gnome", "goliath", "halfling", "human", "orc", "tiefling"};
 
-    // Dictionary Variables
+    // Dictionary. String is Classes, Integer is Hit Dice
     Dictionary<string, int> classesDict = new Dictionary<string, int>()
     {
-        {"Artificer", 8},
-        {"Barbarian", 12},
-        {"Bard", 8},
-        {"Cleric", 8},
-        {"Druid", 8},
-        {"Fighter", 10},
-        {"Monk", 8},
-        {"Ranger", 10},
-        {"Rogue", 8},
-        {"Paladin", 10},
-        {"Sorcerer", 6},
-        {"Wizard", 6},
-        {"Warlock", 8}
+        {"artificer", 8},
+        {"barbarian", 12},
+        {"bard", 8},
+        {"cleric", 8},
+        {"druid", 8},
+        {"fighter", 10},
+        {"monk", 8},
+        {"ranger", 10},
+        {"rogue", 8},
+        {"paladin", 10},
+        {"sorcerer", 6},
+        {"wizard", 6},
+        {"warlock", 8}
     };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // First, the program checks to see if all of your variables are valid.
+    // Then, the program calculates your health based of the variables and options selected.
+    // Finally, the program prints your information and HP.
     void Start()
     {
         CheckVariables();
         CalculateHealth();
-        Debug.Log(hp);
+        Debug.Log("Your character is " + playerName + ", a level " + playerLevel + " " + playerRace + " " + playerClass);
+        Debug.Log("Your Constitution score is: " + conScore);
+        if (playerFeat.Contains("tough"))
+        {
+            Debug.Log("You have the feat 'tough'.");
+        }
+        if (playerFeat.Contains("stout"))
+        {
+            Debug.Log("You have the feat 'stout'.");
+        }
+        if (isAverage)
+        {
+            Debug.Log("You chose to have their Hit Points be determined via dice roll average.");
+        }
+        else
+        {
+            Debug.Log("You chose to have their Hit Points be determined via random dice rolling.");
+        }
+        Debug.Log("Your Hit Point amount is: " + hp);
     }
 
+    // Checks all inputs from the user. If any inputs do not match, the values below are used in place
+    // Converts all strings to lower case, so that the user does not produce an error if writing an upper case input
     void CheckVariables()
     {
         Convert.ToInt32(playerLevel);
         Convert.ToInt32(conScore);
 
+        playerClass = playerClass.ToLower();
+        playerRace = playerRace.ToLower();
+        for (int i = 0; i < playerFeat.Count; i++)
+        {
+            playerFeat[i] = playerFeat[i].ToLower();
+        }
+
         if (!classesDict.ContainsKey(playerClass))
         {
-            Debug.Log("Gave invalid class, your class is Fighter");
-            playerClass = "Fighter";
+            Debug.Log("Gave invalid class, your class is fighter.");
+            playerClass = "fighter";
         }
 
         if (playerLevel > 20)
         {
-            Debug.Log("Level cannot be greater than 20 you cheater.");
+            Debug.Log("Level cannot be greater than 20 you cheater. It has been set to 20.");
             playerLevel = 20;
         }
         else if (playerLevel < 1)
         {
-            Debug.Log("Level cannot be lower than 1.");
+            Debug.Log("Level cannot be lower than 1. It has been set to 1.");
     
         playerLevel = 1;
         }
 
         if (conScore > 30)
         {
-            Debug.Log("conScore too high");
+            Debug.Log("Your Constitution Score is too high. It has been set to 30.");
             conScore = 30;
         }
         else if (conScore < 1)
         {
-            Debug.Log("conScore too low");
+            Debug.Log("Your Constitution Score is too low. It has been set to 1.");
             conScore = 1;
         }
 
         if (!raceArray.Contains(playerRace))
         {
             Debug.Log("Invalid race. You are now a human.");
-            playerRace = "Human";
+            playerRace = "human";
         }
     }
 
     void CalculateHealth()
     {
+        // Uses 'if' if user checks the 'Is Average' button. Calculates average HP instead of rolling.
+        // Otherwise, uses 'else' to generate random values for health calculations, according to the playerClass variable.
         if (isAverage)
         {
             int totalNumber = 0;
@@ -115,10 +147,12 @@ public class SolutionOne : MonoBehaviour
                 totalNumber += UnityEngine.Random.Range(1, classesDict[playerClass] + 1);
             }
             hp += totalNumber;
-    
-    }
+        }
+
+        // Uses a Switch statment to give each possible Consitution Score a Case.
+        // This Case will then give the player the proper modifier, along with having the modifier affect each Level of the character.
         switch (conScore)
-        {
+            {
             case 1:
                 hp += -5 * playerLevel;
                 break;
@@ -182,25 +216,37 @@ public class SolutionOne : MonoBehaviour
                 hp += 10 * playerLevel;
                 break;
         }
-        if (playerFeat.Contains("Tough"))
+
+        // Checks if the player has input any Feats that matter to health caculation.
+        if (playerFeat.Contains("tough"))
         {
             hp += 2 * playerLevel;
     
-    }
-        if (playerFeat.Contains("Stout"))
+        }
+        if (playerFeat.Contains("stout"))
         {
             hp += playerLevel;
     
-    }
-        if (playerRace == "Dwarf")
+        }
+
+        // If the player inputs a race which affects health calculations, it will be added here.
+        if (playerRace == "dwarf")
         {
             hp += playerLevel * 2;
     
-    }
-        else if (playerRace == "Orc" || playerRace == "Goliath")
+        }
+        else if (playerRace == "orc" || playerRace == "goliath")
         {
             hp += playerLevel;
     
-    }
+        }
+
+        // This check makes sure your hit points never go into the negatives, as that would mean a dead character.
+        if (hp <= 0)
+        {
+            hp = 1;
+            Debug.Log("Your Hit Points came out to less than 1!");
+            Debug.Log("Because this would mean your character is dead, we will bring your hit points up to 1 instead.");
+        }
     }
 }
