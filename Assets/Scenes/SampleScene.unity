@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1671497780
+--- !u!1 &1500502460
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,11 +127,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1671497785}
-  - component: {fileID: 1671497784}
-  - component: {fileID: 1671497783}
-  - component: {fileID: 1671497782}
-  - component: {fileID: 1671497781}
+  - component: {fileID: 1500502465}
+  - component: {fileID: 1500502464}
+  - component: {fileID: 1500502463}
+  - component: {fileID: 1500502462}
+  - component: {fileID: 1500502461}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -139,13 +139,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1671497781
+--- !u!114 &1500502461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671497780}
+  m_GameObject: {fileID: 1500502460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578ee16711635ef4095a7bfa107356e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SolutionOne
+  playerClass: paladin
+  playerRace: orc
+  playerName: Gary
+  playerLevel: 13
+  conScore: 15
+  playerFeat:
+  - Stout
+  isAverage: 1
+--- !u!114 &1500502462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500502460}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
@@ -183,42 +203,21 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1671497782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671497780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 578ee16711635ef4095a7bfa107356e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SolutionOne
-  playerClass: Paladin
-  playerRace: Dwarf
-  playerName: 
-  playerLevel: 3
-  conScore: 21
-  playerFeat:
-  - Tough
-  - Stout
-  isAverage: 0
---- !u!81 &1671497783
+--- !u!81 &1500502463
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671497780}
+  m_GameObject: {fileID: 1500502460}
   m_Enabled: 1
---- !u!20 &1671497784
+--- !u!20 &1500502464
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671497780}
+  m_GameObject: {fileID: 1500502460}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -263,13 +262,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1671497785
+--- !u!4 &1500502465
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671497780}
+  m_GameObject: {fileID: 1500502460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
@@ -282,4 +281,4 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1671497785}
+  - {fileID: 1500502465}
