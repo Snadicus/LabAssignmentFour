@@ -1,13 +1,9 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
-public class PlayerClass : MonoBehaviour
-{
-    public static string chosenClass;
-    Character character = new Character();
+public class PlayerClass
+{ 
+    public string chosenClass;
+    public int hitDie;
 
-    public void ChangeClass(string chosenClass)
-    {
-        character.playerClass = chosenClass;
-    }
 }
