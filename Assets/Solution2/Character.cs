@@ -10,13 +10,19 @@ public class Character
     public int playerLevel;
     public bool isAverage;
     public List<string> feats;
+    public int hitDie;
+    public int hp;
+
     public Character()
     {
-        playerClass = "fighter";
+
     }
 
-    public Character(string playerClass)
+    public Character(string playerClass, int hitDie)
     {
         this.playerClass = playerClass;
+        this.hitDie = hitDie;
+        Debug.Log(this.playerClass);
+        Debug.Log(this.hitDie);
     }
 }
