@@ -27,6 +27,9 @@ public class Game : MonoBehaviour
             case "bard":
                 Bard bard = new Bard();
                 break;
+            case "cleric":
+                Cleric cleric = new Cleric();
+                break;
             case "druid":
                 Druid druid = new Druid();
                 break;
