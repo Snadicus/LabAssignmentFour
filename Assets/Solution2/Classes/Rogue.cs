@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Rogue : MonoBehaviour
+public class Rogue : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Rogue()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Rogue", 8);
     }
 }

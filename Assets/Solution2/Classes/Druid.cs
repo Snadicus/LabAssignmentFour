@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Druid : MonoBehaviour
+public class Druid : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Druid()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Druid", 8);
     }
 }

@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Ranger : MonoBehaviour
+public class Ranger : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Ranger()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Ranger", 10);
     }
 }

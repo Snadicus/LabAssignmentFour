@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Wizard : MonoBehaviour
+public class Wizard : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Wizard()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Wizard", 6);
     }
 }

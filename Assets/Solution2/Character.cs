@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Character
 {
+    // Important character information
     public string playerClass;
     public string name;
     public string race;
@@ -15,10 +16,12 @@ public class Character
 
     public Character()
     {
+        // When instantiating Character, calculate hp
 
+        // Print character information
     }
 
-    public Character(string playerClass, int hitDie)
+    public void ChangeClass(string playerClass, int hitDie)
     {
         this.playerClass = playerClass;
         this.hitDie = hitDie;

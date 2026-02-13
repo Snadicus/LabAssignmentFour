@@ -5,6 +5,7 @@ public class Game : MonoBehaviour
 {
     // Player input
     public string chosenClass;
+    public int playerLevel;
 
     void Start()
     {

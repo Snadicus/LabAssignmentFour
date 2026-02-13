@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Bard : MonoBehaviour
+public class Bard : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Bard()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Bard", 8);
     }
 }

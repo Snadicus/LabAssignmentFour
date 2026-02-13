@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Barbarian : MonoBehaviour
+public class Barbarian : Character
 {
    public  Barbarian()
     {
-        Character barbarian = new Character("Barbarian", 12);
+        ChangeClass("Barbarian", 8);
     }
 }

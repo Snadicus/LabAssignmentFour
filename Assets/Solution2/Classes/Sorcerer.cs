@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Sorcerer : MonoBehaviour
+public class Sorcerer : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Sorcerer()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Scorcerer", 8);
     }
 }

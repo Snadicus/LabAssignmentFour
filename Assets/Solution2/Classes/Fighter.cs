@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Fighter : MonoBehaviour
+public class Fighter : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Fighter()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Fighter", 10);
     }
 }

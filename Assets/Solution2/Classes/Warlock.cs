@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Warlock : MonoBehaviour
+public class Warlock : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Warlock()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ChangeClass("Warlock", 8);
     }
 }
