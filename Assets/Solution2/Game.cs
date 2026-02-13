@@ -3,53 +3,52 @@ using System.Collections.Generic;
 
 public class Game : MonoBehaviour
 {
-
+    // Player input
     public string chosenClass;
 
     void Start()
     {
-        chosenClass == chosenClass.ToLower();
+        // puts player input into lowercase to account for accidentle or wrong capitilization
+        chosenClass = chosenClass.ToLower();
+        // adding a class to the character class based on what the players chosen class is
         switch (chosenClass)
         {
-            case default:
+            default:
             case "fighter":
-                Fighter playerClass = new Fighter();
+                Fighter fighter = new Fighter();
                 break;
             case "artificer":
-                Artificer playerClass = new Artificer();
+                Artificer artificer = new Artificer();
                 break;
             case "barbarian":
-                Barbarian playerClass = new Barbarian();
+                Barbarian barbarian = new Barbarian();
                 break;
             case "bard":
-                Bard playerClass = new Bard();
+                Bard bard = new Bard();
                 break;
             case "druid":
-                Druid playerClass = new Druid();
-                break;
-            case "fighter":
-                Fighter playerClass = new Fighter();
+                Druid druid = new Druid();
                 break;
             case "monk":
-                Monk playerClass = new Monk();
+                Monk monk = new Monk();
                 break;
             case "ranger":
-                Ranger playerClass = new Ranger();
+                Ranger ranger = new Ranger();
                 break;
             case "rogue":
-                Rogue playerClass = new Rogue();
+                Rogue rogue = new Rogue();
                 break;
             case "paladin":
-                Paladin playerClass = new Paladin();
+                Paladin paladin = new Paladin();
                 break;
             case "sorcerer":
-                Sorcerer playerClass = new Sorcerer();
+                Sorcerer sorcerer = new Sorcerer();
                 break;
             case "wizard":
-                Wizard playerClass = new Wizard();
+                Wizard wizard = new Wizard();
                 break;
             case "warlock":
-                Warlock playerClass = new Warlock();
+                Warlock warlock = new Warlock();
                 break;
         }
     }
