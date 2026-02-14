@@ -12,6 +12,8 @@ public class Character
     public bool isAverage;
     public List<string> feats;
     public int hitDie;
+    public int hitPointBonus;
+    public int conScoreModifier;
     public int hp;
 
     public Character()
@@ -27,5 +29,21 @@ public class Character
         this.hitDie = hitDie;
         Debug.Log(this.playerClass);
         Debug.Log(this.hitDie);
+    }
+
+    public void ChangeRace(string race, int hitPointBonus)
+    {
+        this.race = race;
+        this.hitPointBonus = hitPointBonus;
+        Debug.Log(this.race);
+        Debug.Log(this.hitPointBonus);
+    }
+
+    public void ChangeCon(int conScore, int conScoreModifier)
+    {
+        this.conScore = conScore;
+        this.conScoreModifier = conScoreModifier;
+        Debug.Log(this.conScore);
+        Debug.Log(this.conScoreModifier);
     }
 }
