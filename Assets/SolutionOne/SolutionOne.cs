@@ -144,7 +144,7 @@ public class SolutionOne : MonoBehaviour
             int totalNumber = 0;
             for (int i = 0; i < playerLevel; i++)
             {
-                totalNumber += UnityEngine.Random.Range(1, classesDict[playerClass] + 1);
+                totalNumber += UnityEngine.Random.Range(1, classesDict[playerClass]);
             }
             hp += totalNumber;
         }

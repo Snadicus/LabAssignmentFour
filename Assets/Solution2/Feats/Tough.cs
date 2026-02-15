@@ -4,7 +4,7 @@ public class Tough : Character
 {
     public Tough()
     {
-        // Change the Character's race and the amount of extra hit points recieved
+        // Add to the Character's feat and the amount of extra hit points recieved
         AddFeat("Tough", 2);
     }
 }

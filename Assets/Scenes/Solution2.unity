@@ -229,9 +229,9 @@ MonoBehaviour:
   chosenRace: 
   playerLevel: 0
   chosenCon: 0
-  chosenFeats:
-  - stout
-  - tough
+  chosenFeats: []
+  playerName: 
+  isAverage: 0
 --- !u!114 &1420844275
 MonoBehaviour:
   m_ObjectHideFlags: 0

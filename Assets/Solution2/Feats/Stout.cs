@@ -4,7 +4,7 @@ public class Stout : Character
 {
     public Stout()
     {
-        // Change the Character's race and the amount of extra hit points recieved
+        // Add to the Character's feat and the amount of extra hit points recieved
         AddFeat("Stout", 1);
     }
 }
