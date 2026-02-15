@@ -1,16 +1,10 @@
 using UnityEngine;
 
-public class Tough : MonoBehaviour
+public class Tough : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Tough()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Change the Character's race and the amount of extra hit points recieved
+        AddFeat("Tough", 2);
     }
 }

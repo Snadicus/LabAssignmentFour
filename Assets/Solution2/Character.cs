@@ -39,6 +39,13 @@ public class Character
         Debug.Log(this.hitPointBonus);
     }
 
+    public void AddFeat(string feat, int hitPointFeatBonus)
+    {
+        Debug.Log(feat);
+        Debug.Log(hitPointFeatBonus);
+    }
+
+    /*
     public void ChangeCon(int conScore, int conScoreModifier)
     {
         this.conScore = conScore;
@@ -46,4 +53,5 @@ public class Character
         Debug.Log(this.conScore);
         Debug.Log(this.conScoreModifier);
     }
+    */
 }

@@ -8,6 +8,8 @@ public class Game : MonoBehaviour
     public string chosenRace;
     public int playerLevel;
     public int chosenCon;
+    private int conModifier;
+    public List<string> chosenFeats;
 
     void Start()
     {
@@ -95,6 +97,98 @@ public class Game : MonoBehaviour
                 break;
         }
 
+        // adding a modifer to the character based on what the players chosen constitution is
+        switch (chosenCon)
+        {
+            default:
+            case 1:
+                conModifier = -5;
+                break;
+            case 2:
+            case 3:
+                conModifier = -4;
+                break;
+            case 4:
+            case 5:
+                conModifier = -3;
+                break;
+            case 6:
+            case 7:
+                conModifier = -2;
+                break;
+            case 8:
+            case 9:
+                conModifier = -1;
+                break;
+            case 10:
+            case 11:
+                conModifier = 0;
+                break;
+            case 12:
+            case 13:
+                conModifier = 1;
+                break;
+            case 14:
+            case 15:
+                conModifier = 2;
+                break;
+            case 16:
+            case 17:
+                conModifier = 3;
+                break;
+            case 18:
+            case 19:
+                conModifier = 4;
+                break;
+            case 20:
+            case 21:
+                conModifier = 5;
+                break;
+            case 22:
+            case 23:
+                conModifier = 6;
+                break;
+            case 24:
+            case 25:
+                conModifier = 7;
+                break;
+            case 26:
+            case 27:
+                conModifier = 8;
+                break;
+            case 28:
+            case 29:
+                conModifier = 9;
+                break;
+            case 30:
+                conModifier = 10;
+                break;
+        }
+
+        // Printing chosen Con and its modifier
+        if (chosenCon < 1 || chosenCon > 30)
+        {
+            chosenCon = 1;
+        }
+        Debug.Log(this.chosenCon);
+        Debug.Log(this.conModifier);
+
+        // Feats
+        for (int i = 0; i < chosenFeats.Count; i++)
+        {
+            chosenFeats[i] = chosenFeats[i].ToLower();
+        }
+
+        if (chosenFeats.Contains("tough"))
+        {
+            Tough tough = new Tough();
+        }
+        if (chosenFeats.Contains("stout"))
+        {
+            Stout stout = new Stout();
+        }
+
+        /*
         // adding a modifer to the character based on what the players chosen constitution is
         switch (chosenCon)
         {
@@ -191,6 +285,7 @@ public class Game : MonoBehaviour
                 break;
 
         }
+        */
 
     }
 

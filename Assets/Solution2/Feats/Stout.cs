@@ -1,16 +1,10 @@
 using UnityEngine;
 
-public class Stout : MonoBehaviour
+public class Stout : Character
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Stout()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Change the Character's race and the amount of extra hit points recieved
+        AddFeat("Stout", 1);
     }
 }

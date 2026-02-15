@@ -226,6 +226,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game
   chosenClass: 
+  chosenRace: 
+  playerLevel: 0
+  chosenCon: 0
+  chosenFeats:
+  - stout
+  - tough
 --- !u!114 &1420844275
 MonoBehaviour:
   m_ObjectHideFlags: 0
