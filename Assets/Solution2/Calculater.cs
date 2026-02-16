@@ -2,10 +2,17 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Calculater : Character2
+public class Calculater
 {
-    public int Calculatehp(int hitDie, int playerLevel, int raceBonus, int conScore, bool isAverage, List<string> feats)
+    public int Calculatehp(Character2 character)
     {
+        int hitDie = character.GetHitDie();
+        int playerLevel = character.playerLevel;
+        int raceBonus = character.GetRaceBonus();
+        int conScore = character.conScore;
+        bool isAverage = character.isAverage;
+        List<string> feats = character.GetFeats();
+
         int hp = 0;
         // Uses 'if' if user checks the 'Is Average' button. Calculates average HP instead of rolling.
         // Otherwise, uses 'else' to generate random values for health calculations, according to the playerClass variable.
@@ -24,7 +31,7 @@ public class Calculater : Character2
             int totalNumber = 0;
             for (int i = 0; i < playerLevel; i++)
             {
-                totalNumber += UnityEngine.Random.Range(1, hitDie);
+                totalNumber += UnityEngine.Random.Range(1, hitDie+1);
             }
             hp += totalNumber;
         }

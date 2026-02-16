@@ -12,8 +12,8 @@ public class Character2
     // Integer Variables
     public int playerLevel;
     public int conScore;
-    private int hp;
-    private int raceBonus = 0;
+    public int hp;
+    public int raceBonus;
 
     // Lists
     [SerializeField] List<string> playerFeat;
@@ -58,7 +58,7 @@ public class Character2
         if (!classesDict.ContainsKey(playerClass))
         {
             Debug.Log("Gave invalid class, your class is fighter.");
-            playerClass = "fighter";
+            this.playerClass = "fighter";
         }
         if (playerRace == "dwarf")
         {
@@ -68,6 +68,21 @@ public class Character2
         {
             raceBonus = 1;
         }
-        hp = Calculater.Calculatehp(classesDict[playerClass], playerLevel, raceBonus, conScore, isAverage, playerFeat);
     }
+
+    public int GetHitDie()
+    {
+        return classesDict[playerClass];
+    }
+
+    public int GetRaceBonus()
+    {
+        return raceBonus;
+    }
+
+    public List<string> GetFeats()
+    {
+        return playerFeat;
+    }
+
 }
