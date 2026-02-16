@@ -68,6 +68,6 @@ public class Character2
         {
             raceBonus = 1;
         }
-        hp = Calculater.Calculatehp(classesDict[playerClass], playerLevel, raceBonus, conScore, isAverage, playerFeat);
+        //hp = Calculater.Calculatehp(classesDict[playerClass], playerLevel, raceBonus, conScore, isAverage, playerFeat);
     }
 }
