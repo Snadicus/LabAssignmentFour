@@ -21,18 +21,33 @@ public class Game2 : MonoBehaviour
 
     // Boolean Variables
     public bool chosenAverage;
+
     // Arrays
     private string[] raceArray = { "aasimar", "dragonborn", "dwarf", "elf", "gnome", "goliath", "halfling", "human", "orc", "tiefling" };
+    private string[] classArray = { "artificer", "barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"};
 
     void Start()
     {
+        // Build Character with chosen variables
         CheckVariables();
-        Debug.Log(chosenClass);
-        Debug.Log(chosenRace);
-        Debug.Log(chosenName);
-        Debug.Log(chosenLevel);
-        Debug.Log(chosenConScore);
-        Debug.Log(chosenFeat);
+        Debug.Log("Your character is a level " + chosenLevel + " " + chosenRace + " " + chosenClass + " named " + chosenName + ".");
+        Debug.Log("Their Constitution Score is " + chosenConScore + ".");
+        if (chosenFeat.Contains("tough"))
+        {
+            Debug.Log("You have the feat 'tough'.");
+        }
+        if (chosenFeat.Contains("stout"))
+        {
+            Debug.Log("You have the feat 'stout'.");
+        }
+        if (chosenAverage == true)
+        {
+            Debug.Log("You chose to have their Hit Points be determined via dice roll average.");
+        }
+        else
+        {
+            Debug.Log("You chose to have their Hit Points be determined via random dice rolling.");
+        }
         Character2 character = new Character2(
             chosenClass,
             chosenRace,
@@ -46,7 +61,7 @@ public class Game2 : MonoBehaviour
         Calculater calc = new Calculater();
         int hp = calc.Calculatehp(character);
 
-        Debug.Log("Final HP: " + hp);
+        Debug.Log("The Hit Point total of your character is: " + hp);
     }
 
     // Check variables input by the player and gives invalid values defualt values
@@ -57,6 +72,17 @@ public class Game2 : MonoBehaviour
 
         chosenClass = chosenClass.ToLower();
         chosenRace = chosenRace.ToLower();
+
+        if (!raceArray.Contains(chosenRace))
+        {
+            Debug.Log("Invalid race. You are now a human.");
+            chosenRace = "human";
+        }
+        if (!classArray.Contains(chosenClass))
+        {
+            Debug.Log("Invalid class. You are now a fighter.");
+            chosenClass = "fighter";
+        }
         for (int i = 0; i < chosenFeat.Count; i++)
         {
             chosenFeat[i] = chosenFeat[i].ToLower();
@@ -82,12 +108,6 @@ public class Game2 : MonoBehaviour
         {
             Debug.Log("Your Constitution Score is too low. It has been set to 1.");
             chosenConScore = 1;
-        }
-
-        if (!raceArray.Contains(chosenRace))
-        {
-            Debug.Log("Invalid race. You are now a human.");
-            chosenRace = "human";
         }
     }
 }

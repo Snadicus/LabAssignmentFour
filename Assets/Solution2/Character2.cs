@@ -45,6 +45,7 @@ public class Character2
 
     }
 
+    // Character Class
     public Character2(string playerClass, string playerRace, string playerName, int playerLevel, int conScore, List<string> playerFeat, bool isAverage)
     {
         this.playerClass = playerClass;
@@ -54,12 +55,14 @@ public class Character2
         this.conScore = conScore;
         this.playerFeat = playerFeat;
         this.isAverage = isAverage;
+
         // Quick check to make sure chosen class is valid
         if (!classesDict.ContainsKey(playerClass))
         {
-            Debug.Log("Gave invalid class, your class is fighter.");
             this.playerClass = "fighter";
         }
+
+        // Apply Hit Point bonuses to races
         if (playerRace == "dwarf")
         {
             raceBonus = 2;
@@ -68,7 +71,6 @@ public class Character2
         {
             raceBonus = 1;
         }
-        //hp = Calculater.Calculatehp(classesDict[playerClass], playerLevel, raceBonus, conScore, isAverage, playerFeat);
     }
 
     public int GetHitDie()
